@@ -1,6 +1,7 @@
-name: Build and lint
+name: Build, test and lint
 on:
   push:
+    branches: [main]
   pull_request:
   workflow_dispatch:
 permissions:
@@ -27,5 +28,5 @@ jobs:
       - uses: gradle/actions/setup-gradle@0723195856401067f7a2779048b490ace7a47d7c # v5
       - name: Install SDK components
         run: sdkmanager 'platforms;android-35' 'build-tools;34.0.0'
-      - name: Build and lint
-        run: ./gradlew --no-daemon assembleDebug assembleRelease lintDebug lintRelease
+      - name: Build, test and lint
+        run: ./gradlew --no-daemon testDebugUnitTest assembleDebug assembleRelease lintDebug lintRelease

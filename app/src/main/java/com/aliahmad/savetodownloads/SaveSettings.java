@@ -8,10 +8,9 @@ import android.os.Environment;
 final class SaveSettings {
     static final String DOWNLOADS = "downloads", APP_FOLDER = "app_folder", CUSTOM = "custom";
     private final SharedPreferences prefs;
-    private final Context context;
+    static final String APP_DIRECTORY = "FileTuck";
 
     SaveSettings(Context context) {
-        this.context = context;
         prefs = context.getSharedPreferences("save_settings", Context.MODE_PRIVATE);
     }
 
@@ -27,10 +26,10 @@ final class SaveSettings {
     }
     String label() {
         if (CUSTOM.equals(mode())) return prefs.getString("name", "Selected folder");
-        return APP_FOLDER.equals(mode()) ? "Downloads/" + context.getString(R.string.app_name) : "Downloads";
+        return APP_FOLDER.equals(mode()) ? "Downloads/" + APP_DIRECTORY : "Downloads";
     }
     String relativePath() {
         return Environment.DIRECTORY_DOWNLOADS + (APP_FOLDER.equals(mode())
-                ? "/" + context.getString(R.string.app_name) : "");
+                ? "/" + APP_DIRECTORY : "");
     }
 }

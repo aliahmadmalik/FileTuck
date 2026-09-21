@@ -1,13 +1,34 @@
 <resources>
-    <string name="app_name">FileTuck</string>
+    <string name="app_name" translatable="false">FileTuck</string>
     <string name="share_target_name">Save with FileTuck</string>
-    <string name="ready_title">Ready to save</string>
-    <string name="instructions">Share a file from any app, then choose “Save with FileTuck”. The file will be copied to your Downloads folder.</string>
-    <string name="no_file_shared">No file was included in this share.</string>
+    <string name="version_header">FILETUCK  /  %1$s</string>
+    <string name="headline">A home for every\nshared file.</string>
+    <string name="tagline">Share it. Tuck it away. Find it right where you want it.</string>
+    <string name="saving_to">SAVING TO</string>
+    <string name="download_settings">Download settings</string>
+    <string name="choose_destination">Choose where new shared files are saved.</string>
+    <string name="downloads">Downloads</string>
+    <string name="downloads_description">Save directly to your Downloads folder.</string>
+    <string name="app_folder" translatable="false">Downloads / FileTuck</string>
+    <string name="app_folder_description">Keep files together. Created automatically on your first save.</string>
+    <string name="custom_folder">Choose another folder</string>
+    <string name="custom_folder_description">Pick an existing folder or create one in the folder picker.</string>
+    <string name="how_to_save">How to save</string>
+    <string name="save_steps">1.  Select one or more files in another app.\n2.  Tap Share, then Save with FileTuck.\n3.  Your files go to the folder selected above.</string>
+    <string name="future_saves">Changes apply to future saves. Existing files stay where they are.</string>
+    <string name="no_folder_picker">No folder picker is available on this device.</string>
+    <string name="selected_folder">Selected folder</string>
+    <string name="folder_access_failed">Could not access this folder. Please choose another folder.</string>
+    <string name="destination_option">%1$s  %2$s\n%3$s</string>
+    <string name="no_file_shared">No readable file was included in this share.</string>
     <string name="save_failed">Could not save. Open FileTuck to check your folder settings and available storage.</string>
-    <string name="partially_saved">Saved %1$d of %2$d files to %3$s.</string>
+    <string name="save_interrupted">The save was interrupted. Check your destination before sharing missing files again.</string>
     <plurals name="files_saved">
         <item quantity="one">Saved %1$d file to %2$s.</item>
         <item quantity="other">Saved %1$d files to %2$s.</item>
+    </plurals>
+    <plurals name="files_partially_saved">
+        <item quantity="one">Saved %1$d of %2$d file to %3$s.</item>
+        <item quantity="other">Saved %1$d of %2$d files to %3$s.</item>
     </plurals>
 </resources>

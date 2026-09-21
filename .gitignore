@@ -34,3 +34,7 @@ captures/
 *.idsig
 release/
 dist/
+
+# Local password files and signing exports
+*password*.txt
+*.mobileprovision

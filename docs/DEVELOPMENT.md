@@ -19,7 +19,7 @@ Configure the SDK through `ANDROID_HOME` or Android Studio’s local SDK setting
 Do not commit `local.properties`, passwords, signing keys, or generated build files.
 
 ```sh
-./gradlew assembleDebug assembleRelease lintDebug lintRelease
+./gradlew testDebugUnitTest assembleDebug assembleRelease lintDebug lintRelease
 ```
 
 Outputs:
@@ -36,7 +36,9 @@ The unsigned release must be signed before distribution. See [RELEASING.md](RELE
 | --- | --- |
 | `MainActivity.java` | Destination settings and Android folder picker |
 | `SaveSettings.java` | Local preferences and destination paths |
-| `ShareReceiverActivity.java` | Share intent parsing, file copying, result messages |
+| `ShareReceiverActivity.java` | Share intent parsing, lifecycle handling, result messages |
+| `SaveTask.java` | One copy job retained across configuration changes |
+| `FileCopier.java` | Copies shared files to MediaStore Downloads or a chosen folder |
 | `app/src/main/res/` | App icon, themes, colors, and message resources |
 | `scripts/package-release.sh` | Signature, version, permissions, alignment, and checksum checks |
 
@@ -44,17 +46,16 @@ Java files are under `app/src/main/java/com/aliahmad/savetodownloads/`.
 
 ## Validation
 
-CI builds both variants and runs Android lint. Actions are pinned to commit SHAs;
+CI runs unit tests, builds both variants, and runs Android lint. Actions are pinned to commit SHAs;
 Dependabot proposes updates for review. CI has read-only repository permissions,
 no release signing credentials, and does not publish APKs.
 
-There are no automated unit or device tests yet. Builds and lint are useful checks,
-but they do not establish that sharing, storage providers, or device upgrades work.
-Use the manual device checklist in [RELEASING.md](RELEASING.md).
+Robolectric unit tests (API 29 and 35) cover share-intent parsing, malformed
+extras, activity recreation during a copy, backgrounding before completion, and
+process-death restores. There are no device tests: storage providers and upgrades
+still need the manual checklist in [RELEASING.md](RELEASING.md).
 
-Current lint warnings concern orientation, backup configuration, translation/plural
-handling, icon resources, and unused resources. They are not proof of a security
-problem, but should be reviewed before broader promotion.
+Lint currently reports no warnings for either variant.
 
 ## Contributing and support
 

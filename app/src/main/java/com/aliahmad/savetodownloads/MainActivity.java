@@ -3,7 +3,6 @@ package com.aliahmad.savetodownloads;
 import android.app.Activity;
 import android.content.Intent;
 import android.database.Cursor;
-import android.graphics.Color;
 import android.graphics.Typeface;
 import android.graphics.drawable.GradientDrawable;
 import android.net.Uri;
@@ -31,7 +30,7 @@ public final class MainActivity extends Activity {
     private void render() {
         ScrollView scroll = new ScrollView(this);
         scroll.setFillViewport(true);
-        scroll.setBackgroundColor(Color.rgb(246, 247, 251));
+        scroll.setBackgroundColor(getColor(R.color.screen_background));
         content = new LinearLayout(this);
         content.setOrientation(LinearLayout.VERTICAL);
         content.setPadding(dp(24), dp(24), dp(24), dp(32));
@@ -43,29 +42,34 @@ public final class MainActivity extends Activity {
         });
         setContentView(scroll);
         scroll.requestApplyInsets();
-        text("FILETUCK  /  2.0", 13, 0xFF526078, true, 16);
-        text("A home for every\nshared file.", 32, 0xFF172033, true, 12);
-        text("Share it. Tuck it away. Find it right where you want it.", 16, 0xFF526078, false, 28);
+        text(getString(R.string.version_header, versionName()), 13, getColor(R.color.text_secondary), true, 16);
+        text(getString(R.string.headline), 32, getColor(R.color.text_primary), true, 12);
+        text(getString(R.string.tagline), 16, getColor(R.color.text_secondary), false, 28);
         LinearLayout destination = new LinearLayout(this);
         destination.setOrientation(LinearLayout.VERTICAL);
         destination.setPadding(dp(20), dp(20), dp(20), dp(20));
-        destination.setBackground(background(0xFF172033));
+        destination.setBackground(background(getColor(R.color.destination_background)));
         TextView caption = new TextView(this);
-        caption.setText("SAVING TO"); caption.setTextSize(12); caption.setTextColor(0xFFB9C6DD);
+        caption.setText(getString(R.string.saving_to)); caption.setTextSize(12); caption.setTextColor(getColor(R.color.card_caption));
         destination.addView(caption);
         TextView path = new TextView(this);
-        path.setText(settings.label()); path.setTextSize(22); path.setTextColor(Color.WHITE);
+        path.setText(settings.label()); path.setTextSize(22); path.setTextColor(getColor(R.color.card_text));
         path.setPadding(0, dp(10), 0, 0);
         destination.addView(path);
         content.addView(destination);
-        text("Download settings", 21, 0xFF172033, true, 8).setPadding(0, dp(28), 0, 0);
-        text("Choose where new shared files are saved.", 14, 0xFF526078, false, 16);
-        option(SaveSettings.DOWNLOADS, "Downloads", "Save directly to your Downloads folder.");
-        option(SaveSettings.APP_FOLDER, "Downloads / FileTuck", "Keep files together. Created automatically on your first save.");
-        option(SaveSettings.CUSTOM, "Choose another folder", "Pick an existing folder or create one in the folder picker.");
-        text("How to save", 19, 0xFF172033, true, 8).setPadding(0, dp(24), 0, 0);
-        text("1.  Select one or more files in another app.\n2.  Tap Share, then Save with FileTuck.\n3.  Your files go to the folder selected above.", 15, 0xFF526078, false, 18);
-        text("Changes apply to future saves. Existing files stay where they are.", 13, 0xFF526078, false, 0);
+        text(getString(R.string.download_settings), 21, getColor(R.color.text_primary), true, 8).setPadding(0, dp(28), 0, 0);
+        text(getString(R.string.choose_destination), 14, getColor(R.color.text_secondary), false, 16);
+        option(SaveSettings.DOWNLOADS, getString(R.string.downloads), getString(R.string.downloads_description));
+        option(SaveSettings.APP_FOLDER, getString(R.string.app_folder), getString(R.string.app_folder_description));
+        option(SaveSettings.CUSTOM, getString(R.string.custom_folder), getString(R.string.custom_folder_description));
+        text(getString(R.string.how_to_save), 19, getColor(R.color.text_primary), true, 8).setPadding(0, dp(24), 0, 0);
+        text(getString(R.string.save_steps), 15, getColor(R.color.text_secondary), false, 18);
+        text(getString(R.string.future_saves), 13, getColor(R.color.text_secondary), false, 0);
+    }
+
+    private String versionName() {
+        try { return getPackageManager().getPackageInfo(getPackageName(), 0).versionName; }
+        catch (android.content.pm.PackageManager.NameNotFoundException impossible) { return ""; }
     }
 
     private GradientDrawable background(int color) {
@@ -85,11 +89,11 @@ public final class MainActivity extends Activity {
         Button button = new Button(this);
         button.setAllCaps(false);
         button.setGravity(android.view.Gravity.START | android.view.Gravity.CENTER_VERTICAL);
-        button.setText((selected ? "●  " : "○  ") + title + "\n" + description);
-        button.setTextSize(15); button.setTextColor(0xFF172033);
+        button.setText(getString(R.string.destination_option, selected ? "●" : "○", title, description));
+        button.setTextSize(15); button.setTextColor(getColor(R.color.text_primary));
         button.setPadding(dp(18), dp(16), dp(18), dp(16));
-        GradientDrawable bg = background(selected ? 0xFFE9EEFF : Color.WHITE);
-        bg.setStroke(dp(selected ? 2 : 1), selected ? 0xFF526DE0 : 0xFFE0E5EF);
+        GradientDrawable bg = background(selected ? getColor(R.color.selected_background) : getColor(R.color.surface));
+        bg.setStroke(dp(selected ? 2 : 1), selected ? getColor(R.color.selected_border) : getColor(R.color.border));
         button.setBackground(bg);
         LinearLayout.LayoutParams params = new LinearLayout.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, -2);
         params.bottomMargin = dp(10); content.addView(button, params);
@@ -100,7 +104,7 @@ public final class MainActivity extends Activity {
                         | Intent.FLAG_GRANT_PERSISTABLE_URI_PERMISSION);
                 try { startActivityForResult(intent, PICK_FOLDER); }
                 catch (android.content.ActivityNotFoundException exception) {
-                    Toast.makeText(this, "No folder picker is available on this device.", Toast.LENGTH_LONG).show();
+                    Toast.makeText(this, getString(R.string.no_folder_picker), Toast.LENGTH_LONG).show();
                 }
             } else { settings.select(mode); render(); }
         });
@@ -116,13 +120,13 @@ public final class MainActivity extends Activity {
                     (flags & Intent.FLAG_GRANT_READ_URI_PERMISSION) != 0
                             ? Intent.FLAG_GRANT_READ_URI_PERMISSION | Intent.FLAG_GRANT_WRITE_URI_PERMISSION
                             : Intent.FLAG_GRANT_WRITE_URI_PERMISSION);
-            String name = "Selected folder";
+            String name = getString(R.string.selected_folder);
             Uri document = DocumentsContract.buildDocumentUriUsingTree(uri, DocumentsContract.getTreeDocumentId(uri));
             try (Cursor cursor = getContentResolver().query(document,
                     new String[]{DocumentsContract.Document.COLUMN_DISPLAY_NAME}, null, null, null)) {
                 if (cursor != null && cursor.moveToFirst()) name = cursor.getString(0);
             }
-            if (name == null || name.trim().isEmpty()) name = "Selected folder";
+            if (name == null || name.trim().isEmpty()) name = getString(R.string.selected_folder);
             Uri old = settings.tree();
             settings.selectCustom(uri, name);
             if (old != null && !old.equals(uri)) {
@@ -132,7 +136,7 @@ public final class MainActivity extends Activity {
             }
             render();
         } catch (RuntimeException exception) {
-            Toast.makeText(this, "Could not access this folder. Please choose another folder.", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, getString(R.string.folder_access_failed), Toast.LENGTH_LONG).show();
         }
     }
 }
