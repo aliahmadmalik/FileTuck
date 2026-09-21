@@ -5,7 +5,7 @@ plugins {
 android {
     namespace = "com.aliahmad.savetodownloads"
     compileSdk = 35
-    buildToolsVersion = "34.0.0"
+    buildToolsVersion = "36.0.0"
 
     defaultConfig {
         applicationId = "com.aliahmad.savetodownloads"
@@ -31,6 +31,12 @@ android {
     dependenciesInfo {
         includeInApk = false
         includeInBundle = false
+    }
+
+    // AGP 9 adds kotlin-stdlib to every app; R8 removes its classes from this Java app,
+    // but its metadata resources would still be packaged.
+    packaging {
+        resources.excludes += "kotlin/**"
     }
 
     testOptions {

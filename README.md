@@ -138,8 +138,8 @@ provide an accessible `content://` URI.
 
 ## Build from source
 
-Use **JDK 17**, Android SDK **35**, and SDK Build Tools **34.0.0**. The included
-wrapper selects **Gradle 8.11.1**; the project uses **Android Gradle Plugin 8.7.3**.
+Use **JDK 17**, Android SDK **35**, and SDK Build Tools **36.0.0**. The included
+wrapper selects **Gradle 9.7.1**; the project uses **Android Gradle Plugin 9.4.1**.
 
 ```sh
 git clone https://github.com/aliahmadmalik/FileTuck.git

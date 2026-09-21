@@ -6,10 +6,10 @@
 | --- | --- |
 | Minimum Android | Android 10 / API 29 |
 | Compile / target SDK | API 35 |
-| Build Tools | 34.0.0 |
+| Build Tools | 36.0.0 |
 | JDK | 17 |
-| Gradle wrapper | 8.11.1, with distribution checksum verification |
-| Android Gradle Plugin | 8.7.3 |
+| Gradle wrapper | 9.7.1, with distribution checksum verification |
+| Android Gradle Plugin | 9.4.1 |
 | App version / code | 2.0 / 6 |
 
 The application ID is `com.aliahmad.savetodownloads`. Keep it and the signing key
