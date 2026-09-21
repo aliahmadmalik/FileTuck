@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">FileTuck</string>
+    <string name="share_target_name">Save with FileTuck</string>
+    <string name="ready_title">Ready to save</string>
+    <string name="instructions">Share a file from any app, then choose “Save with FileTuck”. The file will be copied to your Downloads folder.</string>
+    <string name="no_file_shared">No file was included in this share.</string>
+    <string name="save_failed">Could not save. Open FileTuck to check your folder settings and available storage.</string>
+    <string name="partially_saved">Saved %1$d of %2$d files to %3$s.</string>
+    <plurals name="files_saved">
+        <item quantity="one">Saved %1$d file to %2$s.</item>
+        <item quantity="other">Saved %1$d files to %2$s.</item>
+    </plurals>
+</resources>

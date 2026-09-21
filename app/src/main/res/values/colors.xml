@@ -1,0 +1,8 @@
+<resources>
+    <color name="brand">#111827</color>
+    <color name="brand_dark">#030712</color>
+    <color name="icon_mark">#FFFFFF</color>
+    <color name="text_primary">#172033</color>
+    <color name="text_secondary">#526078</color>
+    <color name="white">#FFFFFF</color>
+</resources>

@@ -1,0 +1,36 @@
+.gradle/
+local.properties
+**/build/
+*.iml
+.idea/
+.DS_Store
+
+# Local credentials, signing material, and machine-specific state
+.env
+.env.*
+*.jks
+*.keystore
+*.p12
+*.pfx
+*.pem
+*.key
+key.properties
+keystore.properties
+signing.properties
+credentials.json
+google-services.json
+.android/
+.kotlin/
+.codex/
+.agents/
+*.log
+*.hprof
+captures/
+
+# Publish only explicitly reviewed APKs as release assets, not source files
+*.apk
+*.aab
+*.apks
+*.idsig
+release/
+dist/
