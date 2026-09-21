@@ -1,0 +1,45 @@
+name: Bug report
+description: Report a reproducible FileTuck problem.
+title: "[Bug]: "
+body:
+  - type: markdown
+    attributes:
+      value: "Use harmless sample files. Remove personal information from screenshots and logs. For vulnerabilities, use the private security link instead."
+  - type: input
+    id: app-version
+    attributes:
+      label: FileTuck version
+      placeholder: "2.0"
+    validations:
+      required: true
+  - type: input
+    id: device
+    attributes:
+      label: Android version and device model
+    validations:
+      required: true
+  - type: input
+    id: source
+    attributes:
+      label: Source app and version
+      description: Which app were you sharing from?
+    validations:
+      required: true
+  - type: dropdown
+    id: destination
+    attributes:
+      label: Save destination
+      options:
+        - Downloads
+        - Downloads / FileTuck
+        - Custom local folder
+        - Custom cloud provider
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps, expected result, and actual result
+      description: Include file type, approximate size, and any error message. Do not attach private files.
+    validations:
+      required: true

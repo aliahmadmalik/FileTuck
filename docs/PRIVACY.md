@@ -9,7 +9,10 @@ send file contents or usage data to the developer.
 
 The destination mode, custom folder URI, and folder name are stored in private app
 preferences. Android manages temporary access to shared source files and persistent
-access to a selected destination folder. Android app backup is disabled.
+access to a selected destination folder. Cloud app backup is disabled with `android:allowBackup="false"`. On some Android
+12+ devices, manufacturer-managed device-to-device migration can still transfer
+app data; FileTuck 2.0 does not define explicit data-extraction rules. See
+[Android backup behavior](https://developer.android.com/identity/data/autobackup).
 
 Custom storage providers may offer cloud destinations and transfer files themselves.
 Those providers operate under their own policies. Saved files in shared storage
