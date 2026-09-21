@@ -25,9 +25,9 @@ Use a project identity when creating a new certificate if appropriate.
    example paths and alias; passwords are requested interactively:
 
 ```sh
-"$ANDROID_HOME/build-tools/34.0.0/zipalign" -p -f 4 \
+"$ANDROID_HOME/build-tools/36.0.0/zipalign" -p -f 4 \
   app/build/outputs/apk/release/app-release-unsigned.apk /tmp/filetuck-aligned.apk
-"$ANDROID_HOME/build-tools/34.0.0/apksigner" sign \
+"$ANDROID_HOME/build-tools/36.0.0/apksigner" sign \
   --ks /path/outside/repository/filetuck-release.jks --ks-key-alias filetuck \
   --out /tmp/filetuck-signed.apk /tmp/filetuck-aligned.apk
 ./scripts/package-release.sh /tmp/filetuck-signed.apk
