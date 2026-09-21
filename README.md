@@ -145,7 +145,7 @@ wrapper selects **Gradle 8.11.1**; the project uses **Android Gradle Plugin 8.7.
 git clone https://github.com/aliahmadmalik/FileTuck.git
 cd FileTuck
 # Configure ANDROID_HOME, or open the project in Android Studio first.
-./gradlew assembleDebug lintDebug
+./gradlew testDebugUnitTest assembleDebug lintDebug
 ```
 
 On Windows use `gradlew.bat`. The debug APK is written to

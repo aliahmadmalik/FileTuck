@@ -14,5 +14,5 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "ShareSaveTo"
+rootProject.name = "FileTuck"
 include(":app")

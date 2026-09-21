@@ -33,22 +33,25 @@ Use a project identity when creating a new certificate if appropriate.
 ./scripts/package-release.sh /tmp/filetuck-signed.apk
 ```
 
-Do not use the Android debug key. The package script checks the application ID,
-version, absence of requested permissions, non-debuggable flag, APK alignment,
-and valid signature; it rejects the usual Android debug certificate. The script
-cannot prove that an arbitrary APK matches the reviewed source: build it yourself
-from the exact release commit. Review `release/SIGNING-CERTIFICATE.txt`, especially
-the certificate subject, and record the signer fingerprint for future releases.
+Do not use the Android debug key. The package script reads `versionName`,
+`versionCode`, and `buildToolsVersion` from `app/build.gradle.kts` and checks the
+application ID, version, absence of requested permissions, non-debuggable flag,
+APK alignment, and signature. It accepts only a single signer whose SHA-256
+certificate digest matches [`SIGNING-CERTIFICATE.sha256`](SIGNING-CERTIFICATE.sha256).
+Set `ANDROID_BUILD_TOOLS_VERSION` to use a different installed Build Tools version.
+The script cannot prove that an arbitrary APK matches the reviewed source: build it
+yourself from the exact release commit.
 
 The public assets are **only**:
 
-- `release/FileTuck-2.0.apk`
-- `release/SHA256SUMS`
-- `release/SIGNING-CERTIFICATE.txt`
+- `release/<version>/FileTuck-<version>.apk`
+- `release/<version>/SHA256SUMS`
+- `release/<version>/SIGNING-CERTIFICATE.txt`
 
 Do not upload the whole build folder, mapping reports, machine caches, keystores,
 local preferences, or debug APKs. For later releases, increase `versionCode` and
-update `versionName`, release notes, documentation, and package-script expectations.
+update `versionName`, release notes, and documentation. The package script follows
+the build configuration automatically.
 
 ## Device verification
 
