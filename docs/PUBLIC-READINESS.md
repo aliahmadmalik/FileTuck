@@ -23,7 +23,7 @@ audit. The downloadable 2.0 APK has not been changed by this documentation updat
 | Repository protection | Secret scanning, push protection, private vulnerability reporting, and dependency security alerts enabled. |
 | Automation | Build/lint checks; Actions pinned to full commits; read-only token; no signing secrets in CI. |
 | Documentation | Direct APK link, requirements, install/update instructions, privacy, limitations, troubleshooting, and support channels. |
-| Licensing | Personal installation permitted; no source reuse license selected. This is not currently advertised as open source. |
+| Licensing | Updated 25 September 2026: source code, documentation, and original artwork licensed under Apache-2.0 with owner authorization; see LICENSE. |
 | Device testing | No connected device available during this review; installation and real file-sharing behavior remain unverified. |
 
 ## Work needed before broad promotion
@@ -51,9 +51,9 @@ audit. The downloadable 2.0 APK has not been changed by this documentation updat
    as developer verification or promise unrestricted installation on every device.
    Registration and any identity checks must be completed by the account owner.
    [Official verification guidance](https://developer.android.com/developer-verification)
-6. **Choose a source license if reuse is intended.** Public source visibility and
-   APK downloads do not make the source open source. The owner's existing rights
-   reservation has been preserved rather than selecting a license on their behalf.
+6. **Publish the licensed source release for F-Droid.** Apache-2.0 was selected
+   on 25 September 2026 with owner authorization. The new license and metadata
+   still need to be included in a published release tag; see FDROID.md.
 
 ## Other quality improvements
 
@@ -69,7 +69,7 @@ The repository description and topics describe actual capabilities: Android,
 share sheet, file sharing, Downloads, and Storage Access Framework. The README
 uses a descriptive title, concise introduction, clear sections, meaningful image
 alt text, and links to release/support information. It avoids unsupported claims,
-keyword stuffing, and inaccurate “open source” or “100% secure” badges.
+keyword stuffing and unsupported security claims.
 
 GitHub controls page metadata and search-engine indexing; a README cannot set the
 page's HTML SEO meta tags or guarantee rankings. The project has no separate

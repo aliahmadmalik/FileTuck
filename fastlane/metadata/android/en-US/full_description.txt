@@ -1,0 +1,10 @@
+FileTuck saves file attachments from Android's share sheet. Share a photo, PDF, document, or another file, then choose Save with FileTuck.
+
+• Save to Downloads, Downloads / FileTuck, or a custom folder.
+• Save one file or several files in a single share action.
+• Remember your preferred destination between launches.
+• Choose custom destinations with Android's system folder picker.
+
+No account, ads, or analytics. FileTuck requests no internet or broad storage permissions. Local file copies work offline; cloud-backed storage providers may need connectivity and follow their own privacy policies.
+
+Requires Android 10 or newer. Share actual file attachments: text-only and link-only shares are unsupported. Transfers have no persistent background queue or progress bar, and Android can interrupt large copies. Folder availability and duplicate filename handling depend on the storage provider.

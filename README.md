@@ -156,6 +156,9 @@ See [development and testing](docs/DEVELOPMENT.md) and [signing a release](docs/
 
 ## Project status and support
 
+Source version 2.0.1 adds Apache-2.0 licensing and F-Droid metadata. The current
+developer-signed APK download remains version 2.0 until a new APK is published.
+
 FileTuck 2.0 is an early public release. Build, lint, release signature, and download
 checks passed. **Physical-device installation and file-sharing tests are still
 pending**, so broad device compatibility has not been established. See the
@@ -167,6 +170,12 @@ reproduction steps. Use harmless sample files and redact personal information.
 
 ## License
 
-You may download and install the official release APK for personal use. No
-source-code reuse license has been granted; all other rights are reserved.
+Copyright 2026 Ali Ahmad Malik.
+
+FileTuck's source code, documentation, and original artwork are licensed under
+the [Apache License 2.0](LICENSE). You may use, modify, and redistribute them
+under its terms.
 The Gradle wrapper retains its upstream Apache 2.0 licensing notices.
+
+F-Droid submission preparation is tracked in [the submission guide](docs/FDROID.md).
+FileTuck is not yet listed on F-Droid.

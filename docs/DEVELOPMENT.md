@@ -10,7 +10,7 @@
 | JDK | 17 |
 | Gradle wrapper | 9.7.1, with distribution checksum verification |
 | Android Gradle Plugin | 9.4.1 |
-| App version / code | 2.0 / 6 |
+| App version / code | 2.0.1 / 7 |
 
 The application ID is `com.aliahmad.savetodownloads`. Keep it and the signing key
 stable for compatible updates. The app’s Java code uses Android framework APIs.
@@ -55,12 +55,13 @@ extras, activity recreation during a copy, backgrounding before completion, and
 process-death restores. There are no device tests: storage providers and upgrades
 still need the manual checklist in [RELEASING.md](RELEASING.md).
 
-Lint currently reports no warnings for either variant.
+Release lint on 25 September 2026 passed with two SDK-age warnings (OldTargetApi
+and GradleDependency) and no errors.
 
 ## Contributing and support
 
 Use the issue forms for reproducible bugs and focused feature requests. Do not
 submit copyrighted/private sample files, tokens, keystores, or unredacted logs.
-Discuss substantial code changes before opening a pull request. The repository
-currently has no source-code reuse license; visibility is not an open-source license.
+Discuss substantial code changes before opening a pull request. The source code,
+documentation, and original artwork are licensed under [Apache-2.0](../LICENSE).
 Security reports belong in the private channel described in [SECURITY.md](../SECURITY.md).

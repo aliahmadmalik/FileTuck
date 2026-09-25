@@ -1,0 +1,1 @@
+FileTuck is now licensed under Apache-2.0. Added store descriptions and artwork for F-Droid packaging. File-saving behavior is unchanged.

@@ -78,7 +78,7 @@ review every staged change before committing:
 git add .gitignore .gitattributes .github README.md SECURITY.md docs scripts app/src app/build.gradle.kts \
   app/proguard-rules.pro build.gradle.kts settings.gradle.kts gradle.properties \
   gradlew gradlew.bat gradle/wrapper
-# Add LICENSE separately after the owner chooses one.
+git add LICENSE fastlane
 git diff --cached --stat
 git diff --cached --check
 git diff --cached

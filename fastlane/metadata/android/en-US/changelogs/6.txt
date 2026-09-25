@@ -1,0 +1,1 @@
+Save single or multiple shared files to Downloads, Downloads / FileTuck, or a custom folder. Remember your chosen destination and report successful, partial, and failed saves. Requires Android 10 or newer. No network or broad storage permissions. Legacy file-path shares are rejected; shared content URIs are supported.
