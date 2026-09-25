@@ -177,5 +177,6 @@ the [Apache License 2.0](LICENSE). You may use, modify, and redistribute them
 under its terms.
 The Gradle wrapper retains its upstream Apache 2.0 licensing notices.
 
-F-Droid submission preparation is tracked in [the submission guide](docs/FDROID.md).
+F-Droid inclusion is requested in [packaging request #4453](https://gitlab.com/fdroid/rfp/-/work_items/4453).
+See [the submission guide](docs/FDROID.md) for packaging details.
 FileTuck is not yet listed on F-Droid.

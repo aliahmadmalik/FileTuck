@@ -1,7 +1,8 @@
 # F-Droid submission
 
-Status: source prepared for a Request for Packaging; FileTuck has not been
-accepted or published by F-Droid.
+Status: [Request for Packaging #4453](https://gitlab.com/fdroid/rfp/-/work_items/4453)
+submitted on 25 September 2026. Licensed source tag `v2.0.1` is public.
+FileTuck has not yet been accepted or published by F-Droid.
 
 ## Resolve before submission
 
@@ -9,7 +10,7 @@ accepted or published by F-Droid.
    README.md applies it to source, documentation, and original artwork. Include
    these changes in the public release and preserve third-party notices.
 2. Version 2.0.1 (versionCode 7) contains the license and Fastlane metadata.
-   Publish it under the new v2.0.1 tag; retain the existing v2.0 tag unchanged.
+   Published under the new v2.0.1 tag; the existing v2.0 tag is unchanged.
 3. Add real device screenshots under
    `fastlane/metadata/android/en-US/images/phoneScreenshots/`. A 512px PNG icon
    rendered from the existing SVG is included at
