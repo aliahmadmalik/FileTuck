@@ -1,4 +1,4 @@
-package com.aliahmad.savetodownloads;
+package com.nosleepjustcode.filetuck;
 
 import android.content.Context;
 import android.content.SharedPreferences;

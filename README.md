@@ -156,7 +156,9 @@ See [development and testing](docs/DEVELOPMENT.md) and [signing a release](docs/
 
 ## Project status and support
 
-Source version 2.0.1 adds Apache-2.0 licensing and F-Droid metadata. The current
+Source version 2.0.2 uses the public application ID `com.nosleepjustcode.filetuck`
+and author name **nosleepjustcode**, with Apache-2.0 licensing and F-Droid metadata.
+It installs separately from earlier development APKs. The current
 developer-signed APK download remains version 2.0 until a new APK is published.
 
 FileTuck 2.0 is an early public release. Build, lint, release signature, and download

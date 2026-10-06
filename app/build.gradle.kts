@@ -3,16 +3,16 @@ plugins {
 }
 
 android {
-    namespace = "com.aliahmad.savetodownloads"
+    namespace = "com.nosleepjustcode.filetuck"
     compileSdk = 35
     buildToolsVersion = "36.0.0"
 
     defaultConfig {
-        applicationId = "com.aliahmad.savetodownloads"
+        applicationId = "com.nosleepjustcode.filetuck"
         minSdk = 29
         targetSdk = 35
-        versionCode = 7
-        versionName = "2.0.1"
+        versionCode = 8
+        versionName = "2.0.2"
     }
 
     buildTypes {

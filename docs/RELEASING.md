@@ -3,9 +3,10 @@
 ## Release identity and private signing material
 
 The official repository is `aliahmadmalik/FileTuck`. Retain the existing release
-signing key, application ID, and public no-reply commit identity. Review the source
-license if distribution terms change. The application ID includes `aliahmad`; this is intentionally
-public metadata. Git commits also expose author name and email: choose a GitHub
+signing key, application ID `com.nosleepjustcode.filetuck`, and public no-reply commit
+identity for future releases. Version 2.0.2 adopts this public package identity;
+earlier development APKs use a different ID and install separately. Review the source
+license if distribution terms change. Git commits also expose author name and email: choose a GitHub
 no-reply email if you do not want to expose a personal email address.
 
 Keep the release keystore and passwords outside this repository and back them up

@@ -10,9 +10,9 @@
 | JDK | 17 |
 | Gradle wrapper | 9.7.1, with distribution checksum verification |
 | Android Gradle Plugin | 9.4.1 |
-| App version / code | 2.0.1 / 7 |
+| App version / code | 2.0.2 / 8 |
 
-The application ID is `com.aliahmad.savetodownloads`. Keep it and the signing key
+The application ID is `com.nosleepjustcode.filetuck`. Keep it and the signing key
 stable for compatible updates. The app’s Java code uses Android framework APIs.
 
 Configure the SDK through `ANDROID_HOME` or Android Studio’s local SDK settings.
@@ -42,7 +42,7 @@ The unsigned release must be signed before distribution. See [RELEASING.md](RELE
 | `app/src/main/res/` | App icon, themes, colors, and message resources |
 | `scripts/package-release.sh` | Signature, version, permissions, alignment, and checksum checks |
 
-Java files are under `app/src/main/java/com/aliahmad/savetodownloads/`.
+Java files are under `app/src/main/java/com/nosleepjustcode/filetuck/`.
 
 ## Validation
 

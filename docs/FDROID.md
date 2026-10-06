@@ -1,7 +1,9 @@
 # F-Droid submission
 
 Status: [Request for Packaging #4453](https://gitlab.com/fdroid/rfp/-/work_items/4453)
-submitted on 25 September 2026. Licensed source tag `v2.0.1` is public.
+submitted on 25 September 2026. Version 2.0.2 adopts `com.nosleepjustcode.filetuck` and public author
+`nosleepjustcode` for the first F-Droid submission. Earlier development tags
+use a different application ID.
 FileTuck has not yet been accepted or published by F-Droid.
 
 ## Resolve before submission
@@ -9,13 +11,13 @@ FileTuck has not yet been accepted or published by F-Droid.
 1. Apache-2.0 has been selected with owner authorization and added as `LICENSE`.
    README.md applies it to source, documentation, and original artwork. Include
    these changes in the public release and preserve third-party notices.
-2. Version 2.0.1 (versionCode 7) contains the license and Fastlane metadata.
-   Published under the new v2.0.1 tag; the existing v2.0 tag is unchanged.
+2. Version 2.0.2 (versionCode 8) contains the license and Fastlane metadata.
+   Publish a new v2.0.2 tag; preserve existing development tags.
 3. Add real device screenshots under
    `fastlane/metadata/android/en-US/images/phoneScreenshots/`. A 512px PNG icon
    rendered from the existing SVG is included at
    `fastlane/metadata/android/en-US/images/icon.png`.
-   Screenshots should show the actual app. Changelog 7.txt describes this release.
+   Screenshots should show the actual app. Changelog 8.txt describes this release.
 4. Run the device checklist in RELEASING.md. Existing documentation records
    physical-device testing as pending.
 5. Validate the recipe below using current fdroidserver tooling and the F-Droid
@@ -27,11 +29,12 @@ FileTuck has not yet been accepted or published by F-Droid.
 Local verification on 25 September 2026: `assembleRelease lintRelease` succeeded
 using the cached toolchain. Lint reported two SDK-age warnings (OldTargetApi and
 GradleDependency), with no errors. No Android device was connected for screenshots
-or device testing. fdroidserver is not installed locally; F-Droid-specific
-validation remains pending.
+or device testing. Current fdroidserver tooling is installed in an isolated local environment.
+The final recipe must pass metadata checks; isolated F-Droid build validation
+remains pending until CI runs.
 
 After the release is published, create
-`metadata/com.aliahmad.savetodownloads.yml` in a fork of
+`metadata/com.nosleepjustcode.filetuck.yml` in a fork of
 [fdroiddata](https://gitlab.com/fdroid/fdroiddata). This is a draft,
 not a validated submission recipe.
 
@@ -39,6 +42,8 @@ not a validated submission recipe.
 Categories:
   - System
 License: Apache-2.0
+AuthorName: nosleepjustcode
+AuthorWebSite: https://gitlab.com/nosleepjustcode
 SourceCode: https://github.com/aliahmadmalik/FileTuck
 IssueTracker: https://github.com/aliahmadmalik/FileTuck/issues
 Changelog: https://github.com/aliahmadmalik/FileTuck/releases
@@ -49,17 +54,17 @@ RepoType: git
 Repo: https://github.com/aliahmadmalik/FileTuck.git
 
 Builds:
-  - versionName: '2.0.1'
-    versionCode: 7
-    commit: v2.0.1
+  - versionName: '2.0.2'
+    versionCode: 8
+    commit: <full commit SHA of v2.0.2>
     subdir: app
     gradle:
       - yes
 
 AutoUpdateMode: Version v%v
 UpdateCheckMode: Tags ^v[0-9]+\.[0-9]+(\.[0-9]+)?$
-CurrentVersion: '2.0.1'
-CurrentVersionCode: 7
+CurrentVersion: '2.0.2'
+CurrentVersionCode: 8
 ```
 
 Current source uses JDK 17, SDK 35, Build Tools 36.0.0, Gradle 9.7.1, and
@@ -72,9 +77,9 @@ In the configured fdroiddata checkout/build environment, run:
 
 ```sh
 fdroid readmeta
-fdroid rewritemeta com.aliahmad.savetodownloads
-fdroid lint com.aliahmad.savetodownloads
-fdroid build com.aliahmad.savetodownloads
+fdroid rewritemeta com.nosleepjustcode.filetuck
+fdroid lint com.nosleepjustcode.filetuck
+fdroid build com.nosleepjustcode.filetuck
 ```
 
 For a first submission, open a [Request for Packaging](https://gitlab.com/fdroid/rfp/-/issues)

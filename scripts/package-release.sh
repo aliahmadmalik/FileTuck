@@ -9,6 +9,7 @@ fi
 : "${ANDROID_HOME:?Set ANDROID_HOME to your Android SDK directory}"
 config="$root/app/build.gradle.kts"
 version="$(sed -nE 's/^[[:space:]]*versionName = "([^"]+)".*/\1/p' "$config")"
+application_id="$(sed -nE 's/^[[:space:]]*applicationId = "([^"]+)".*/\1/p' "$config")"
 code="$(sed -nE 's/^[[:space:]]*versionCode = ([0-9]+).*/\1/p' "$config")"
 build_tools="${ANDROID_BUILD_TOOLS_VERSION:-$(sed -nE 's/^[[:space:]]*buildToolsVersion = "([^"]+)".*/\1/p' "$config")}"
 [[ "$version" =~ ^[0-9A-Za-z][0-9A-Za-z._-]*$ && "$code" =~ ^[0-9]+$ && -n "$build_tools" ]] || {
@@ -40,7 +41,7 @@ if ! grep -Fqx "Signer #1 certificate SHA-256 digest: $expected_signer" "$tmp/SI
   echo 'Refusing an APK that does not match the official FileTuck signing identity.' >&2; exit 1
 fi
 "$tools/aapt" dump badging "$tmp/$apk" > "$tmp/badging.txt"
-grep -Fq "package: name='com.aliahmad.savetodownloads' versionCode='$code' versionName='$version'" "$tmp/badging.txt"
+grep -Fq "package: name='$application_id' versionCode='$code' versionName='$version'" "$tmp/badging.txt"
 if grep -q 'application-debuggable' "$tmp/badging.txt"; then
   echo 'Refusing a debuggable APK.' >&2; exit 1
 fi

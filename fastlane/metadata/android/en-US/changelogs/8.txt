@@ -1,0 +1,1 @@
+Use com.nosleepjustcode.filetuck as the public application ID. Update source packages and release documentation for the first F-Droid submission. This app installs separately from earlier development APKs.
