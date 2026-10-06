@@ -4,7 +4,10 @@ Status: [Request for Packaging #4453](https://gitlab.com/fdroid/rfp/-/work_items
 submitted on 25 September 2026. Version 2.0.2 adopts `com.nosleepjustcode.filetuck` and public author
 `nosleepjustcode` for the first F-Droid submission. Earlier development tags
 use a different application ID.
-FileTuck has not yet been accepted or published by F-Droid.
+[Merge request !51427](https://gitlab.com/fdroid/fdroiddata/-/merge_requests/51427)
+was submitted on 6 October 2026 with the v2.0.2 source commit. Local metadata
+checks pass. Fork CI is blocked by GitLab account verification; the MR asks
+maintainers to trigger F-Droid CI. FileTuck has not yet been accepted or published.
 
 ## Resolve before submission
 
@@ -12,7 +15,7 @@ FileTuck has not yet been accepted or published by F-Droid.
    README.md applies it to source, documentation, and original artwork. Include
    these changes in the public release and preserve third-party notices.
 2. Version 2.0.2 (versionCode 8) contains the license and Fastlane metadata.
-   Publish a new v2.0.2 tag; preserve existing development tags.
+   Source tag v2.0.2 is public; existing development tags are preserved.
 3. Add real device screenshots under
    `fastlane/metadata/android/en-US/images/phoneScreenshots/`. A 512px PNG icon
    rendered from the existing SVG is included at
@@ -33,10 +36,9 @@ or device testing. Current fdroidserver tooling is installed in an isolated loca
 The final recipe must pass metadata checks; isolated F-Droid build validation
 remains pending until CI runs.
 
-After the release is published, create
+The submitted recipe is
 `metadata/com.nosleepjustcode.filetuck.yml` in a fork of
-[fdroiddata](https://gitlab.com/fdroid/fdroiddata). This is a draft,
-not a validated submission recipe.
+[fdroiddata](https://gitlab.com/fdroid/fdroiddata). Local metadata checks pass; F-Droid isolated build validation remains pending.
 
 ```yaml
 Categories:
@@ -56,7 +58,7 @@ Repo: https://github.com/aliahmadmalik/FileTuck.git
 Builds:
   - versionName: '2.0.2'
     versionCode: 8
-    commit: <full commit SHA of v2.0.2>
+    commit: 893df9e9c90e1c6af8327907728e2b784028bb56
     subdir: app
     gradle:
       - yes

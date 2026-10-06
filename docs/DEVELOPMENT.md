@@ -55,8 +55,9 @@ extras, activity recreation during a copy, backgrounding before completion, and
 process-death restores. There are no device tests: storage providers and upgrades
 still need the manual checklist in [RELEASING.md](RELEASING.md).
 
-Release lint on 25 September 2026 passed with two SDK-age warnings (OldTargetApi
-and GradleDependency) and no errors.
+Validation on 6 October 2026: all 21 unit tests, release assembly, and release lint
+passed. Lint reported OldTargetApi, AndroidGradlePluginVersion, and GradleDependency
+warnings with no errors. GitHub CI also passed for source tag v2.0.2.
 
 ## Contributing and support
 
